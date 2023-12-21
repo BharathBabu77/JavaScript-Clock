@@ -1,0 +1,16 @@
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const formattedTime = pad(hours, 2) + ':' + pad(minutes, 2) + ':' + pad(seconds, 2);
+    document.getElementById('clock').textContent = formattedTime;
+}
+
+function pad(value, width) {
+    return String(value).padStart(width, '0');
+}
+
+setInterval(updateClock, 1000);
+updateClock();
